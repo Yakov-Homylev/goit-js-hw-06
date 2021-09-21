@@ -10,6 +10,7 @@ const btnCreateEl = controlsEl.children[1]
 const btnDeleteEl = controlsEl.children[2]
 
 btnCreateEl.addEventListener('click', createBoxes)
+btnDeleteEl.addEventListener('click', destroyBoxes)
 
 function createBoxes(amount) {
   amount = valueEl.value
@@ -28,6 +29,6 @@ function createBoxes(amount) {
   boxesDivEl.append(...divArray)
 }
 
-btnDeleteEl.addEventListener('click', () => {
+function destroyBoxes() {
   boxesDivEl.innerHTML = ''
-})
+}
