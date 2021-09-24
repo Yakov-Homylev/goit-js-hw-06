@@ -15,7 +15,7 @@ function formValidation(event) {
     formObject.email = email.value;
     formObject.password = password.value
 
-    console.log(`Email:${email.value}, Password:${password.value}`);
+    console.log({ email: email.value, password: password.value});
     event.currentTarget.reset();
 
 }

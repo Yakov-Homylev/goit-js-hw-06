@@ -12,11 +12,12 @@ const btnDeleteEl = controlsEl.children[2]
 btnCreateEl.addEventListener('click', createBoxes)
 btnDeleteEl.addEventListener('click', destroyBoxes)
 
+  let divWidth = 30;
+  let divHeight = 30;
+
 function createBoxes(amount) {
   amount = valueEl.value
   let divArray = [];
-  let divWidth = 30;
-  let divHeight = 30;
 
   for (let i = 0; i < amount; i += 1, divWidth += 10, divHeight += 10) {
     const newDivEl = document.createElement('div')
@@ -27,8 +28,12 @@ function createBoxes(amount) {
   }
 
   boxesDivEl.append(...divArray)
+  valueEl.value = '';
 }
 
 function destroyBoxes() {
   boxesDivEl.innerHTML = ''
+  divHeight = 30;
+  divWidth = 30;
+  valueEl.value = '';
 }
